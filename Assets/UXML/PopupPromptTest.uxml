@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/USS/PopupPromptTest.uss?fileID=7433441132597879392&amp;guid=a3336115fcb48ca4998610ce8ebc60cd&amp;type=3#PopupPromptTest" />
+    <ui:VisualElement style="flex-grow: 1; align-items: center; align-self: auto; justify-content: center;">
+        <MuHua.UIControl.PopupPrompt style="visibility: hidden;" />
+    </ui:VisualElement>
+</ui:UXML>
