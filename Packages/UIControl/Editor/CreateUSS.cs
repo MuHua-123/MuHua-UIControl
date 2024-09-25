@@ -22,13 +22,17 @@ namespace MuHuaEditor.UIControl {
             Object asset = AssetDatabase.LoadAssetAtPath(filePath, typeof(Object));
             Selection.activeObject = asset;
         }
-        [MenuItem("Assets/Create/UI Toolkit/VerticalScrollView USS")]
-        private static void USSVerticalScrollView() {
-            USSCreate(USS + "VerticalScrollView", typeof(VerticalScrollView).Name);
+        [MenuItem("Assets/Create/UI Toolkit/Default USS")]
+        private static void USSDefault() {
+            USSCreate(USS + "Default", "Default");
         }
         [MenuItem("Assets/Create/UI Toolkit/PopupPrompt USS")]
         private static void USSPopupPrompt() {
-            USSCreate(USS + "PopupPrompt", typeof(PopupPrompt).Name);
+            USSCreate(USS + "PopupPrompt", "PopupPrompt");
+        }
+        [MenuItem("Assets/Create/UI Toolkit/VerticalScrollView USS")]
+        private static void USSVerticalScrollView() {
+            USSCreate(USS + "VerticalScrollView", "VerticalScrollView");
         }
     }
 }
