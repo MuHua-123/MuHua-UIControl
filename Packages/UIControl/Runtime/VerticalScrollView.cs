@@ -6,9 +6,6 @@ using UnityEngine.UIElements;
 
 namespace MuHua.UIControl {
     public class VerticalScrollView : VisualElement {
-        public static readonly string USS = "USS/VerticalScrollView";
-        public static readonly string UXML = "UXML/VerticalScrollView";
-
         public static readonly string UssClassName = "vertical-scroll-view";
         public static readonly string UssClassNameViewport = UssClassName + "-viewport";
         public static readonly string UssClassNameContent = UssClassName + "-content";
@@ -60,9 +57,6 @@ namespace MuHua.UIControl {
         }
 
         public VerticalScrollView() {
-            //加载默认样式
-            StyleSheet style = Resources.Load<StyleSheet>(USS);
-            if (style != null) { styleSheets.Add(style); }
             //设置USS类名
             scrollView.Q<VisualElement>("unity-content-and-vertical-scroll-container").AddToClassList(UssClassName);
             scrollView.Q<VisualElement>("unity-content-viewport").AddToClassList(UssClassNameViewport);

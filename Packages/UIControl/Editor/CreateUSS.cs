@@ -14,32 +14,13 @@ namespace MuHuaEditor.UIControl {
         /// </summary>
         /// <param name="ussResourcesPath"></param>
         /// <param name="name"></param>
-        private static void USSCreate(string ussResourcesPath, string name) {
-            //原始文件路径
-            Debug.Log(ussResourcesPath);
-
-            //StyleSheet style = Resources.Load<StyleSheet>(ussResourcesPath);
-            //string original = path + AssetDatabase.GetAssetPath(style);
-            //目标文件路径
+        private static void USSCreate(string usspath, string name) {
             string selectPath = AssetDatabase.GetAssetPath(Selection.activeObject);
             string filePath = $"{selectPath}/{name}.uss";
-            Debug.Log(filePath);
-            bool b = AssetDatabase.CopyAsset(ussResourcesPath, filePath);
-            Debug.Log(b);
-            //拷贝文件
-            //File.Copy(original, filePath);
+            AssetDatabase.CopyAsset(usspath + ".uss", filePath);
             AssetDatabase.Refresh();
-            //选中新创建的文件
-            //string relative = selectPath + fileName;
-            //Object asset = AssetDatabase.LoadAssetAtPath(relative, typeof(Object));
-            //Selection.activeObject = asset;
-        }
-        private static string DuplicateNameJudgment(string path, string name, string extend, int index = 0) {
-            string offset = index == 0 ? "" : index.ToString();
-            string fileName = "/" + name + offset + extend;
-            string filePath = path + fileName;
-            if (File.Exists(filePath)) { index++; return DuplicateNameJudgment(path, name, extend, index); }
-            return fileName;
+            Object asset = AssetDatabase.LoadAssetAtPath(filePath, typeof(Object));
+            Selection.activeObject = asset;
         }
         [MenuItem("Assets/Create/UI Toolkit/VerticalScrollView USS")]
         private static void USSVerticalScrollView() {
