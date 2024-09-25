@@ -24,7 +24,7 @@ namespace MuHuaEditor.UIControl {
         }
         [MenuItem("Assets/Create/UI Toolkit/Default USS")]
         private static void USSDefault() {
-            USSCreate(USS + "Default", "Default");
+            USSCreate(USS + "Fonts", "Fonts");
         }
         [MenuItem("Assets/Create/UI Toolkit/PopupPrompt USS")]
         private static void USSPopupPrompt() {
