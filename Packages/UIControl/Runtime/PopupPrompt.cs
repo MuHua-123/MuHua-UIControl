@@ -6,9 +6,6 @@ using UnityEngine.UIElements;
 
 namespace MuHua.UIControl {
     public class PopupPrompt : VisualElement {
-        public static readonly string USS = "USS/PopupPrompt";
-        public static readonly string UXML = "UXML/PopupPrompt";
-
         public static readonly string UssName = "Popup-Prompt";
         public static readonly string UssNameLabel = UssName + "-Label";
         public static readonly string UssNameButton = UssName + "-Button";
@@ -53,9 +50,6 @@ namespace MuHua.UIControl {
         }
 
         public PopupPrompt() {
-            //加载默认样式
-            StyleSheet style = Resources.Load<StyleSheet>(USS);
-            if (style != null) { styleSheets.Add(style); }
             //设置名称
             label.name = UssNameLabel;
             button.name = UssNameButton;

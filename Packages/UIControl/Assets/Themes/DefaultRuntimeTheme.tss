@@ -1,0 +1,7 @@
+@import url("unity-theme://default");
+
+@import url("/Packages/com.muhua.uicontrol/Assets/USS/Default.uss");
+@import url("/Packages/com.muhua.uicontrol/Assets/USS/PopupPrompt.uss");
+@import url("/Packages/com.muhua.uicontrol/Assets/USS/VerticalScrollView.uss");
+
+VisualElement {}
