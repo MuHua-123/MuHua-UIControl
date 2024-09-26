@@ -38,6 +38,10 @@ namespace MuHuaEditor.UIControl {
         private static void USSPopupPrompt() {
             USSCreate(USS + "PopupPrompt", "PopupPrompt");
         }
+        [MenuItem("Assets/Create/UI Toolkit/PopupWindow USS")]
+        private static void USSPopupWindow() {
+            USSCreate(USS + "PopupWindow", "PopupWindow");
+        }
         [MenuItem("Assets/Create/UI Toolkit/VerticalScrollView USS")]
         private static void USSVerticalScrollView() {
             USSCreate(USS + "VerticalScrollView", "VerticalScrollView");
