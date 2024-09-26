@@ -31,7 +31,7 @@ namespace MuHua.UIControl {
                 string path = Content.GetValueFromBag(bag, cc);
 #if UNITY_EDITOR
                 VisualTreeAsset asset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(path);
-                if (asset != null) { popup.Open(asset.Instantiate()); }
+                if (asset != null) { popup.ReplaceContent(asset.Instantiate()); }
 #endif
             }
         }
@@ -68,18 +68,18 @@ namespace MuHua.UIControl {
             //设置事件
             button.RegisterCallback<ClickEvent>((evt) => Close());
         }
-        public void Open() {
-            visible = true;
-        }
-        public void Open(VisualElement element) {
-            middle.Clear();
-            middle.Add(element);
+        public void Open(Action action) {
+            callback = action;
             visible = true;
         }
         public void Close() {
             callback?.Invoke();
             callback = null;
             visible = false;
+        }
+        public void ReplaceContent(VisualElement element) {
+            middle.Clear();
+            middle.Add(element);
         }
     }
 }
