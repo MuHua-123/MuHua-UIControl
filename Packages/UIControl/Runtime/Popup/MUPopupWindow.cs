@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 namespace MuHua.UIControl {
     public class MUPopupWindow : VisualElement {
         public new class UxmlFactory : UxmlFactory<MUPopupWindow, UxmlTraits> { }
@@ -14,18 +18,21 @@ namespace MuHua.UIControl {
             public UxmlStringAttributeDescription ButtonText = new UxmlStringAttributeDescription {
                 name = "Button-Text", defaultValue = "确认"
             };
-            public UxmlTypeAttributeDescription<VisualElement> Content = new UxmlTypeAttributeDescription<VisualElement> {
-                name = "Content", defaultValue = typeof(Label)
+            public UxmlStringAttributeDescription Content = new UxmlStringAttributeDescription {
+                name = "Content"
             };
             public override void Init(VisualElement ve, IUxmlAttributes bag, CreationContext cc) {
                 base.Init(ve, bag, cc);
                 MUPopupWindow popup = ve as MUPopupWindow;
                 popup.titleText = TitleText.GetValueFromBag(bag, cc);
                 popup.buttonText = ButtonText.GetValueFromBag(bag, cc);
+
                 Type content = typeof(Label);
-                Content.TryGetValueFromBag(bag, cc, ref content);
-                VisualElement element = Activator.CreateInstance(content) as VisualElement;
-                popup.Open(element);
+                string path = Content.GetValueFromBag(bag, cc);
+#if UNITY_EDITOR
+                VisualTreeAsset asset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(path);
+                if (asset != null) { popup.Open(asset.Instantiate()); }
+#endif
             }
         }
         //布局
