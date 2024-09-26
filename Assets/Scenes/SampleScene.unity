@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PanelSettings: {fileID: 11400000, guid: 02dfc82c29a0300458459ec03a27c33e, type: 2}
   m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 9197481963319205126, guid: 976707b985eb59c43a804f14952b598c, type: 3}
+  sourceAsset: {fileID: 9197481963319205126, guid: 356605aa73bc61044aec44d353d48827, type: 3}
   m_SortingOrder: 0
 --- !u!4 &181318318
 Transform:
@@ -180,11 +180,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 181318316}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f351f528bb5aee04992ce8818efc818b, type: 3}
+  m_Script: {fileID: 11500000, guid: dcf22a8e2d0f7ef458e2e531b19e66b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   document: {fileID: 181318317}
-  cube: {fileID: 310981722}
 --- !u!1 &310981722
 GameObject:
   m_ObjectHideFlags: 0

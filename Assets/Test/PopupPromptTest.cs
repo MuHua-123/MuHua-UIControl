@@ -17,6 +17,6 @@ public class PopupPromptTest : MonoBehaviour {
         ISKeyboard.Find(KeyCode.B).OnDown -= PopupPromptTest_OnDown;
     }
     private void PopupPromptTest_OnDown() {
-        rootElement.Q<PopupPrompt>().Open("是否隐藏Cube?", () => { cube.SetActive(false); });
+        rootElement.Q<MUPopupPrompt>().Open("是否隐藏Cube?", () => { cube.SetActive(false); });
     }
 }

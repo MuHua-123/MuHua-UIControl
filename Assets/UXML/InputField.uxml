@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:TextField picking-mode="Ignore" label="Text Field" value="filler text" />
+    <ui:FloatField label="Float Field" value="42.2" />
+    <ui:LongField label="Long Field" value="42" />
+    <ui:Hash128Field label="Hash128 Field" value="885eea9fcca73bdadde4ecd6a3af1312" />
+    <ui:UnsignedIntegerField label="Unsigned Integer Field" value="42" />
+    <MuHua.UIControl.MUTextField value="0" multiline="false" password="false" auto-correction="false" hide-mobile-input="false" is-delayed="false" readonly="false" max-length="-1" keyboard-type="Default" label="222" />
+    <MuHua.UIControl.MUFloatField label="ss" />
+    <MuHua.UIControl.MULongField label="ss" readonly="true" value="63254" />
+</ui:UXML>

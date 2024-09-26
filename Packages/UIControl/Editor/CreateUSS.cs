@@ -22,9 +22,13 @@ namespace MuHuaEditor.UIControl {
             Object asset = AssetDatabase.LoadAssetAtPath(filePath, typeof(Object));
             Selection.activeObject = asset;
         }
-        [MenuItem("Assets/Create/UI Toolkit/Default USS")]
-        private static void USSDefault() {
+        [MenuItem("Assets/Create/UI Toolkit/Fonts USS")]
+        private static void USSFonts() {
             USSCreate(USS + "Fonts", "Fonts");
+        }
+        [MenuItem("Assets/Create/UI Toolkit/InputField USS")]
+        private static void USSInputField() {
+            USSCreate(USS + "InputField", "InputField");
         }
         [MenuItem("Assets/Create/UI Toolkit/PopupPrompt USS")]
         private static void USSPopupPrompt() {
