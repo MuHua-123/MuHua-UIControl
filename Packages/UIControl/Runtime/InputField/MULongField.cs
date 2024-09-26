@@ -21,6 +21,7 @@ namespace MuHua.UIControl {
 
             VisualElement textElement = inputElement.Q<VisualElement>("");
             textElement.ClearClassList();
+            textElement.AddToClassList("unity-text-element");
             textElement.AddToClassList("input-field-text");
         }
     }

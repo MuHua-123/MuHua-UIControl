@@ -21,10 +21,10 @@ namespace MuHua.UIControl {
 
             VisualElement textElement = this.Query<VisualElement>(null, "unity-base-popup-field__text");
             textElement.ClearClassList();
+            textElement.AddToClassList("unity-text-element");
             textElement.AddToClassList("dropdown-text");
 
             VisualElement arrowElement = this.Query<VisualElement>(null, "unity-base-popup-field__arrow");
-            //arrowElement.ClearClassList();
             arrowElement.AddToClassList("dropdown-arrow");
         }
     }
