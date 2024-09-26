@@ -26,6 +26,10 @@ namespace MuHuaEditor.UIControl {
         private static void USSFonts() {
             USSCreate(USS + "Fonts", "Fonts");
         }
+        [MenuItem("Assets/Create/UI Toolkit/Dropdown USS")]
+        private static void USSDropdown() {
+            USSCreate(USS + "Dropdown", "Dropdown");
+        }
         [MenuItem("Assets/Create/UI Toolkit/InputField USS")]
         private static void USSInputField() {
             USSCreate(USS + "InputField", "InputField");
