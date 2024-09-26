@@ -50,13 +50,18 @@ namespace MuHua.UIControl {
         public string buttonText { get => button.text; set => button.text = value; }
 
         public MUPopupWindow() {
+            //清除原有样式
+            title.ClearClassList();
+            button.ClearClassList();
             //设置USS类名
             AddToClassList("popup-window");
             background.AddToClassList("popup-window-background");
             top.AddToClassList("popup-window-top");
             middle.AddToClassList("popup-window-middle");
             bottom.AddToClassList("popup-window-bottom");
+            title.AddToClassList("unity-text-element");
             title.AddToClassList("popup-window-title");
+            button.AddToClassList("unity-text-element");
             button.AddToClassList("popup-window-button");
             //设置层级结构
             hierarchy.Add(background);
