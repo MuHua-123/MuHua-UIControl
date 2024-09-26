@@ -34,12 +34,17 @@ namespace MuHua.UIControl {
         public string buttonText { get => button.text; set => button.text = value; }
 
         public MUPopupPrompt() {
+            //清除原有样式
+            label.ClearClassList();
+            button.ClearClassList();
             //设置USS类名
             AddToClassList("popup-prompt");
             background.AddToClassList("popup-prompt-background");
             content.AddToClassList("popup-prompt-content");
             bottom.AddToClassList("popup-prompt-bottom");
+            label.AddToClassList("unity-text-element");
             label.AddToClassList("popup-prompt-label");
+            button.AddToClassList("unity-text-element");
             button.AddToClassList("popup-prompt-button");
             //设置层级结构
             hierarchy.Add(background);
