@@ -18,8 +18,8 @@ namespace MuHua.UIControl {
             public UxmlStringAttributeDescription ButtonText = new UxmlStringAttributeDescription {
                 name = "Button-Text", defaultValue = "确认"
             };
-            public UxmlStringAttributeDescription Content = new UxmlStringAttributeDescription {
-                name = "Content"
+            public UxmlStringAttributeDescription AssetPath = new UxmlStringAttributeDescription {
+                name = "Asset-Path"
             };
             public override void Init(VisualElement ve, IUxmlAttributes bag, CreationContext cc) {
                 base.Init(ve, bag, cc);
@@ -27,10 +27,9 @@ namespace MuHua.UIControl {
                 popup.titleText = TitleText.GetValueFromBag(bag, cc);
                 popup.buttonText = ButtonText.GetValueFromBag(bag, cc);
 
-                Type content = typeof(Label);
-                string path = Content.GetValueFromBag(bag, cc);
+                popup.assetPath = AssetPath.GetValueFromBag(bag, cc);
 #if UNITY_EDITOR
-                VisualTreeAsset asset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(path);
+                VisualTreeAsset asset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(popup.assetPath);
                 if (asset != null) { popup.ReplaceContent(asset.Instantiate()); }
 #endif
             }
@@ -45,7 +44,7 @@ namespace MuHua.UIControl {
         public Button button = new Button();
         //参数
         public Action callback;
-        public Type template { get; set; }
+        public string assetPath { get; set; }
         public string titleText { get => title.text; set => title.text = value; }
         public string buttonText { get => button.text; set => button.text = value; }
 
