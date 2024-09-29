@@ -9,5 +9,5 @@
   * 在Unity Package Manager选择添加来自gitURL的包
   * 输入URL：https://github.com/MuHua-123/MuHua-UIControl.git?path=Packages/UIControl
   * 可选版本，在url后面加上Tag
-  * 目标URL：https://github.com/MuHua-123/MuHua-UIControl.git?path=Packages/UIControl#0.0.1
+  * 目标URL：https://github.com/MuHua-123/MuHua-UIControl.git?path=Packages/UIControl#0.0.3
 * **方法2：** Fork本仓库到本地，拷贝[**UIControl**](Packages/UIControl) 文件夹至项目中。
