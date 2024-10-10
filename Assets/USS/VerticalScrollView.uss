@@ -1,0 +1,52 @@
+.vertical-scroll-view {
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 300px;
+    height: 450px;
+    flex-direction: row;
+}
+
+.vertical-scroll-view-viewport {
+    width: 270px;
+    height: 100%;
+    visibility: visible;
+    overflow: hidden;
+}
+
+.vertical-scroll-view-content {
+    width: 100%;
+    background-color: rgb(84, 84, 84);
+    height: 500px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    translate: 0 0;
+    transform-origin: center;
+}
+
+.vertical-scroll-view-scroller {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    height: 100%;
+    width: 30px;
+}
+
+.vertical-scroll-view-dragger {
+    background-color: rgb(255, 126, 126);
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    left: auto;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    height: 90px;
+    transform-origin: center;
+}

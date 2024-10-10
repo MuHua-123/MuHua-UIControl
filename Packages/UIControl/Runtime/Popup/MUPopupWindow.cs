@@ -31,6 +31,7 @@ namespace MuHua.UIControl {
 #if UNITY_EDITOR
                 VisualTreeAsset asset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(popup.assetPath);
                 if (asset != null) { popup.ReplaceContent(asset.Instantiate()); }
+                else { popup.middle.Clear(); }
 #endif
             }
         }

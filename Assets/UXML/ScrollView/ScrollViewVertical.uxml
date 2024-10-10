@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/USS/ScrollView/ScrollViewVertical.uss?fileID=7433441132597879392&amp;guid=6af54cc225bf109468ed56c1f4265cea&amp;type=3#ScrollViewVertical" />
+    <MuHua.UIControl.MUScrollViewVertical Asset-Path="Assets/UXML/aaa.uxml" sliding-value="0.35" elasticity="50" />
+</ui:UXML>
