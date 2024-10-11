@@ -30,16 +30,13 @@ namespace MuHua.UIControl {
                 MUFoldout foldout = (MUFoldout)ve;
                 foldout.Text = Text.GetValueFromBag(bag, cc);
                 foldout.Active = Active.GetValueFromBag(bag, cc);
-                foldout.UpdateVisualElement();
                 foldout.AssetPath = AssetPath.GetValueFromBag(bag, cc);
 #if UNITY_EDITOR
                 VisualTreeAsset asset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(foldout.AssetPath);
-                foldout.container.Clear();
                 if (asset == null) { return; }
+                foldout.ClearContainer();
                 int count = Count.GetValueFromBag(bag, cc);
-                for (int i = 0; i < count; i++) {
-                    foldout.container.Add(asset.Instantiate());
-                }
+                for (int i = 0; i < count; i++) { foldout.AddContainer(asset); }
 #endif
             }
         }
@@ -48,11 +45,26 @@ namespace MuHua.UIControl {
         public VisualElement image = new VisualElement();
         public VisualElement container = new VisualElement();
 
-        public string Text { get; set; }
-        public bool Active { get; set; }
-        public string AssetPath { get; set; }
-        private void UpdateVisualElement() {
-            label.text = Text;
+        public string Text {
+            get => label.text;
+            set => label.text = value;
+        }
+        public bool Active {
+            get => isActive;
+            set => SetActive(value);
+        }
+
+        public void AddContainer(VisualTreeAsset asset) {
+            container.Add(asset.Instantiate());
+        }
+        public void ClearContainer() {
+            container.Clear();
+        }
+
+        internal bool isActive;
+        internal string AssetPath { get; set; }
+        internal void SetActive(bool value) {
+            isActive = value;
             container.style.display = Active ? DisplayStyle.Flex : DisplayStyle.None;
         }
 
@@ -74,11 +86,7 @@ namespace MuHua.UIControl {
             title.Add(image);
             title.Add(label);
             //设置事件
-            title.RegisterCallback<ClickEvent>(TriggerClick);
-        }
-        private void TriggerClick(ClickEvent evt) {
-            Active = !Active;
-            UpdateVisualElement();
+            title.RegisterCallback<ClickEvent>((evt) => Active = !Active);
         }
     }
 }
