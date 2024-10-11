@@ -23,8 +23,11 @@ namespace MuHua.UIControl {
                 name = "sliding-value",
                 defaultValue = 0
             };
+            public UxmlIntAttributeDescription Count = new UxmlIntAttributeDescription {
+                name = "count"
+            };
             public UxmlStringAttributeDescription AssetPath = new UxmlStringAttributeDescription {
-                name = "Asset-Path"
+                name = "asset-path"
             };
             public override void Init(VisualElement ve, IUxmlAttributes bag, CreationContext cc) {
                 base.Init(ve, bag, cc);
@@ -36,11 +39,12 @@ namespace MuHua.UIControl {
                 scrollView.AssetPath = AssetPath.GetValueFromBag(bag, cc);
 #if UNITY_EDITOR
                 VisualTreeAsset asset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(scrollView.AssetPath);
-                if (asset != null) {
-                    scrollView.container.Clear();
+                scrollView.container.Clear();
+                if (asset == null) { return; }
+                int count = Count.GetValueFromBag(bag, cc);
+                for (int i = 0; i < count; i++) {
                     scrollView.container.Add(asset.Instantiate());
                 }
-                else { scrollView.container.Clear(); }
 #endif
             }
         }
