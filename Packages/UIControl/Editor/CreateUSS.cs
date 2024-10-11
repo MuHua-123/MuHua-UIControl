@@ -52,6 +52,10 @@ namespace MuHuaEditor.UIControl {
         private static void USSDropdown() {
             USSCreate(USS + "Dropdown", "Dropdown");
         }
+        [MenuItem("Assets/Create/UI Toolkit/Foldout USS")]
+        private static void USSFoldout() {
+            USSCreate(USS + "Foldout", "Foldout");
+        }
         [MenuItem("Assets/Create/UI Toolkit/InputField USS")]
         private static void USSInputField() {
             USSCreate(USS + "InputField", "InputField");
