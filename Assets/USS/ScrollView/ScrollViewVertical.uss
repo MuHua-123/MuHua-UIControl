@@ -13,10 +13,11 @@
 
 .vertical-scroll-view-container {
     width: 100%;
-    height: 1000px;
+    height: auto;
     background-color: rgba(0, 0, 0, 0.2);
     flex-shrink: 0;
     transition-duration: 0.1s;
+    transform-origin: top;
 }
 
 .vertical-scroll-view-scroller {
@@ -29,4 +30,5 @@
     height: 30px;
     width: 100%;
     background-color: rgb(255, 141, 141);
+    flex-grow: 0;
 }

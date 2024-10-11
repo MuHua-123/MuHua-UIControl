@@ -21,28 +21,36 @@ namespace MuHua.UIControl {
                 MUScrollerHorizontal scroller = (MUScrollerHorizontal)ve;
                 scroller.MouseWheelScrollSize = MouseWheelScrollSize.GetValueFromBag(bag, cc);
                 scroller.SlidingValue = SlidingValue.GetValueFromBag(bag, cc);
-                scroller.UpdatePosition();
+                scroller.ElasticRestoration();
             }
         }
         public event Action<float> SlidingValueChanged;
         public VisualElement dragger = new VisualElement();
 
-        private bool isDragger;
-        private float mousePosition;
-
         public float MouseWheelScrollSize { get; set; }
         public float SlidingValue { get; set; }
-        public float MaxPosition {
-            get => resolvedStyle.width - dragger.resolvedStyle.width;
+
+        internal bool isDragger;
+        internal float mousePosition;
+
+        internal float ViewportWidth { get => resolvedStyle.width; }
+        internal float ContainerWidth { get => dragger.resolvedStyle.width; }
+        internal float MaxPosition { get => ComputeMaxPosition(); }
+        internal float ComputeMaxPosition() {
+            float value = ViewportWidth - ContainerWidth;
+            return value >= 0 ? value : -1;
         }
 
-        public void UpdatePosition(float value, bool callback = false) {
-            SlidingValue = Mathf.Clamp(value, 0, 1);
-            UpdatePosition(callback);
+        internal void UpdateDragger(float ratio) {
+            dragger.style.width = ratio * resolvedStyle.width;
         }
-        public void UpdatePosition(bool callback = true) {
+        internal void UpdateVisualElement(float value, bool callback = false) {
+            SlidingValue = Mathf.Clamp(value, 0, 1);
             dragger.transform.position = new Vector3(MaxPosition * SlidingValue, 0);
             if (callback) { SlidingValueChanged?.Invoke(SlidingValue); }
+        }
+        internal void ElasticRestoration() {
+            dragger.schedule.Execute(() => { UpdateVisualElement(SlidingValue); }).StartingIn(1);
         }
 
         public MUScrollerHorizontal() {
@@ -54,44 +62,43 @@ namespace MuHua.UIControl {
             //设置层级结构
             hierarchy.Add(dragger);
             //设置事件
-            dragger.RegisterCallback<PointerDownEvent>(DownDragger);
-            dragger.RegisterCallback<PointerMoveEvent>(DragDragger);
+            dragger.RegisterCallback<PointerDownEvent>(DraggerDown);
+            dragger.RegisterCallback<PointerMoveEvent>(DraggerDrag);
+            dragger.generateVisualContent += DraggerGenerateVisualContent;
 
-            RegisterCallback<PointerDownEvent>(DownScroller);
-            RegisterCallback<WheelEvent>(WheelScroller);
-            RegisterCallback<PointerUpEvent>(ReleaseScroller);
-            RegisterCallback<PointerLeaveEvent>(ReleaseScroller);
+            RegisterCallback<PointerDownEvent>(ScrollerDown);
+            RegisterCallback<WheelEvent>(ScrollerWheel);
+            RegisterCallback<PointerUpEvent>((evt) => ScrollerRelease());
+            RegisterCallback<PointerLeaveEvent>((evt) => ScrollerRelease());
         }
-        private void DownDragger(PointerDownEvent evt) {
+        private void DraggerDown(PointerDownEvent evt) {
             isDragger = true;
             mousePosition = evt.position.x - SlidingValue * MaxPosition;
         }
-        private void DragDragger(PointerMoveEvent evt) {
+        private void DraggerDrag(PointerMoveEvent evt) {
             if (!isDragger) { return; }
             float offset = evt.position.x - mousePosition;
-            offset = Mathf.Clamp(offset, 0, MaxPosition);
-            SlidingValue = offset / MaxPosition;
+            float value = offset / MaxPosition;
+            UpdateVisualElement(value, true);
             mousePosition = evt.position.x - SlidingValue * MaxPosition;
-            UpdatePosition();
         }
-        private void DownScroller(PointerDownEvent evt) {
+        private void DraggerGenerateVisualContent(MeshGenerationContext mgc) {
+            ElasticRestoration();
+        }
+
+        private void ScrollerDown(PointerDownEvent evt) {
             float offset = evt.localPosition.x - dragger.resolvedStyle.width * 0.5f;
-            offset = Mathf.Clamp(offset, 0, MaxPosition);
-            SlidingValue = offset / MaxPosition;
-            UpdatePosition();
+            float value = offset / MaxPosition;
+            UpdateVisualElement(value, true);
         }
-        private void WheelScroller(WheelEvent evt) {
-            float value = Mathf.Clamp(evt.delta.y, -1, 1);
-            float position = SlidingValue * MaxPosition;
-            float offset = position + value * MouseWheelScrollSize;
-            offset = Mathf.Clamp(offset, 0, MaxPosition);
-            SlidingValue = offset / MaxPosition;
-            UpdatePosition();
+        private void ScrollerWheel(WheelEvent evt) {
+            float wheel = Mathf.Clamp(evt.delta.y, -1, 1);
+            float current = SlidingValue * MaxPosition;
+            float offset = current + wheel * MouseWheelScrollSize;
+            float value = offset / MaxPosition;
+            UpdateVisualElement(value, true);
         }
-        private void ReleaseScroller(PointerUpEvent evt) {
-            isDragger = false;
-        }
-        private void ReleaseScroller(PointerLeaveEvent evt) {
+        private void ScrollerRelease() {
             isDragger = false;
         }
     }
