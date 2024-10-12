@@ -52,7 +52,10 @@ namespace MuHua {
         public float SlidingValue { get; set; }
 
         public void AddContainer(VisualTreeAsset asset) {
-            container.Add(asset.Instantiate());
+            AddContainer(asset.Instantiate());
+        }
+        public void AddContainer(VisualElement element) {
+            container.Add(element);
         }
         public void ClearContainer() {
             container.Clear();
