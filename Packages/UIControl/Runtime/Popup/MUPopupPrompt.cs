@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace MuHua.UIControl {
+namespace MuHua {
     public class MUPopupPrompt : VisualElement {
         public new class UxmlFactory : UxmlFactory<MUPopupPrompt, UxmlTraits> { }
         public new class UxmlTraits : VisualElement.UxmlTraits {

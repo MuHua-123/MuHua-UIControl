@@ -8,7 +8,7 @@ using UnityEngine.UIElements;
 using UnityEditor;
 #endif
 
-namespace MuHua.UIControl {
+namespace MuHua {
     public class MUPopupWindow : VisualElement {
         public new class UxmlFactory : UxmlFactory<MUPopupWindow, UxmlTraits> { }
         public new class UxmlTraits : VisualElement.UxmlTraits {

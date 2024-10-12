@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace MuHua.UIControl {
+namespace MuHua {
     public class MUDropdown : DropdownField {
         public new class UxmlFactory : UxmlFactory<MUDropdown, UxmlTraits> { }
         public new class UxmlTraits : DropdownField.UxmlTraits { }

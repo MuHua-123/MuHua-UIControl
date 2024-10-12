@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace MuHua.UIControl {
+namespace MuHua{
     public class MULongField : LongField {
         public new class UxmlFactory : UxmlFactory<MULongField, UxmlTraits> { }
         public new class UxmlTraits : LongField.UxmlTraits { }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using MuHua.InputSystem;
-using MuHua.UIControl;
+using MuHua;
 
 public class PopupPromptTest : MonoBehaviour {
     public UIDocument document;

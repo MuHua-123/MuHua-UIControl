@@ -4,7 +4,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEditor;
-using MuHua.UIControl;
+using MuHua;
 
 namespace MuHuaEditor.UIControl {
     public class CreateUSS : Editor {

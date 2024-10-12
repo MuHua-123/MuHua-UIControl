@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 using UnityEditor;
 #endif
 
-namespace MuHua.UIControl {
+namespace MuHua {
     public class MUScrollViewHorizontal : VisualElement {
         public new class UxmlFactory : UxmlFactory<MUScrollViewHorizontal, UxmlTraits> { }
         public new class UxmlTraits : VisualElement.UxmlTraits {

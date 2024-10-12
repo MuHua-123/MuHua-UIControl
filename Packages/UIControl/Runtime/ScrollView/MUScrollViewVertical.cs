@@ -8,7 +8,7 @@ using UnityEngine.UIElements;
 using UnityEditor;
 #endif
 
-namespace MuHua.UIControl {
+namespace MuHua {
     public class MUScrollViewVertical : VisualElement {
         public new class UxmlFactory : UxmlFactory<MUScrollViewVertical, UxmlTraits> { }
         public new class UxmlTraits : VisualElement.UxmlTraits {

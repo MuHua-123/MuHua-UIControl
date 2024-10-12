@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace MuHua.UIControl {
+namespace MuHua {
     public class MUTextField : TextField {
         public new class UxmlFactory : UxmlFactory<MUTextField, UxmlTraits> { }
         public new class UxmlTraits : TextField.UxmlTraits { }

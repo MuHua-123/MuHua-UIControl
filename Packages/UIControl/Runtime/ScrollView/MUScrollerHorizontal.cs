@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace MuHua.UIControl {
+namespace MuHua {
     public class MUScrollerHorizontal : VisualElement {
         public new class UxmlFactory : UxmlFactory<MUScrollerHorizontal, UxmlTraits> { }
         public new class UxmlTraits : VisualElement.UxmlTraits {

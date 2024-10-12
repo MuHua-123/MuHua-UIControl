@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace MuHua.UIControl {
+namespace MuHua {
     public class MUFloatField : FloatField {
         public new class UxmlFactory : UxmlFactory<MUFloatField, UxmlTraits> { }
         public new class UxmlTraits : FloatField.UxmlTraits { }
-        public MUFloatField()  {
+        public MUFloatField() {
             ClearClassList();
             AddToClassList("input-field");
 

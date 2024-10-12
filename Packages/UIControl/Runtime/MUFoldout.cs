@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 using UnityEditor;
 #endif
 
-namespace MuHua.UIControl {
+namespace MuHua {
     public class MUFoldout : VisualElement {
         public new class UxmlFactory : UxmlFactory<MUFoldout, UxmlTraits> { }
         public new class UxmlTraits : VisualElement.UxmlTraits {
