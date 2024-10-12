@@ -23,6 +23,7 @@ namespace MuHua {
         public static Template Instantiate<Template, V>(this VisualElement parent, VisualTreeAsset template, V value) where Template : UIViewTemplate<V>, new() {
             Template temp = new Template();
             temp.SetValue(template, value);
+            parent.Add(temp.element);
             return temp;
         }
     }
