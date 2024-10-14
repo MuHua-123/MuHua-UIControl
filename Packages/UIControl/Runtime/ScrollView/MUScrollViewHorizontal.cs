@@ -39,7 +39,7 @@ namespace MuHua {
                 for (int i = 0; i < count; i++) { scrollView.AddContainer(asset); }
 #endif
                 scrollView.scroller.MouseWheelScrollSize = scrollView.MouseWheelScrollSize;
-                scrollView.ElasticRestoration();
+                scrollView.ContainerRelease();
             }
         }
         public MUScrollerHorizontal scroller = new MUScrollerHorizontal();
@@ -75,10 +75,6 @@ namespace MuHua {
             SlidingValue = value;
             container.transform.position = new Vector3(MaxPosition * SlidingValue, 0);
             scroller.UpdateVisualElement(SlidingValue);
-        }
-        internal void ElasticRestoration() {
-            float value = Mathf.Clamp01(SlidingValue);
-            container.schedule.Execute(() => { UpdateVisualElement(value); }).StartingIn(1);
         }
 
         public MUScrollViewHorizontal() {
@@ -122,7 +118,8 @@ namespace MuHua {
         }
         private void ContainerRelease() {
             isDragger = false;
-            ElasticRestoration();
+            float value = Mathf.Clamp01(SlidingValue);
+            container.schedule.Execute(() => { UpdateVisualElement(value); }).StartingIn(1);
         }
         private void ContainerWheel(WheelEvent evt) {
             float wheel = Mathf.Clamp(evt.delta.y, -1, 1);
@@ -130,12 +127,12 @@ namespace MuHua {
             float offset = current + wheel * MouseWheelScrollSize;
             float value = offset / MaxPosition;
             UpdateVisualElement(value);
-            ElasticRestoration();
+            ContainerRelease();
         }
         private void ContainerGenerateVisualContent(MeshGenerationContext mgc) {
             float ratio = Mathf.Clamp01(ViewportWidth / ContainerWidth);
             scroller.UpdateDragger(ratio);
-            ElasticRestoration();
+            ContainerRelease();
         }
     }
 }
