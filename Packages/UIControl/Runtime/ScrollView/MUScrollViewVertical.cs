@@ -125,7 +125,7 @@ namespace MuHua {
         private void ContainerWheel(WheelEvent evt) {
             float wheel = Mathf.Clamp(evt.delta.y, -1, 1);
             float current = SlidingValue * MaxPosition;
-            float offset = current + wheel * MouseWheelScrollSize;
+            float offset = current - wheel * MouseWheelScrollSize;
             float value = offset / MaxPosition;
             UpdateVisualElement(value);
             ContainerRelease();
