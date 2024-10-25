@@ -43,3 +43,7 @@
     text-overflow: ellipsis;
     overflow: visible;
 }
+.input-field-text-d {
+    -unity-font-style: italic;
+    color: rgba(27, 27, 27, 0.6);
+}
