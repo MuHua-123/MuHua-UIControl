@@ -1,4 +1,3 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/USS/Slider.uss?fileID=7433441132597879392&amp;guid=0525608fbf9cfa047b74048f8fa1a21b&amp;type=3#Slider" />
     <MuHua.MUSliderHorizontal name="MUSliderHorizontal" sliding-value="0.5" display-input="true" max-value="100" data-type="保留两位小数" />
 </ui:UXML>

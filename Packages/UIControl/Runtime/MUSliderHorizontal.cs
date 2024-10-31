@@ -32,6 +32,7 @@ namespace MuHua {
                 name = "data-type"
             };
             public override void Init(VisualElement ve, IUxmlAttributes bag, CreationContext cc) {
+                base.Init(ve, bag, cc);
                 MUSliderHorizontal slider = (MUSliderHorizontal)ve;
                 slider.Text = Text.GetValueFromBag(bag, cc);
                 slider.MinValue = MinValue.GetValueFromBag(bag, cc);
@@ -41,6 +42,7 @@ namespace MuHua {
                 slider.DataType = DataType.GetValueFromBag(bag, cc);
             }
         }
+        public event Action<float> SlidingValueChanged;
         public Label labelElement = new Label();
         public MUFloatField floatField = new MUFloatField();
         public VisualElement background = new VisualElement();
@@ -99,6 +101,7 @@ namespace MuHua {
             slidingValue = Mathf.Clamp(slidingValue, 0, 1);
             tracker.style.width = CurrentPosition;
             UpdateFloatField();
+            SlidingValueChanged?.Invoke(Value);
         }
         internal void UpdateFloatField(bool value) {
             isDisplayInput = value;
