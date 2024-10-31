@@ -1,4 +1,4 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/USS/Foldout.uss?fileID=7433441132597879392&amp;guid=65bc042c186553547b54276d909b23c1&amp;type=3#Foldout" />
-    <MuHua.UIControl.MUFoldout text="标题" active="false" asset-path="Assets/UXML/Test/FoldoutTitle.uxml" count="5" />
+    <MuHua.MUFloatField />
 </ui:UXML>

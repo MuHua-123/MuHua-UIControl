@@ -68,5 +68,9 @@ namespace MuHuaEditor.UIControl {
         private static void USSPopupWindow() {
             USSCreate(USS + "PopupWindow", "PopupWindow");
         }
+        [MenuItem("Assets/Create/UI Toolkit/Slider USS")]
+        private static void USSSlider() {
+            USSCreate(USS + "Slider", "Slider");
+        }
     }
 }

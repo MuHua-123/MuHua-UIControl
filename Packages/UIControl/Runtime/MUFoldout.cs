@@ -40,14 +40,14 @@ namespace MuHua {
 #endif
             }
         }
-        public Label label = new Label();
+        public Label labelElement = new Label();
         public VisualElement title = new VisualElement();
         public VisualElement image = new VisualElement();
         public VisualElement container = new VisualElement();
 
         public string Text {
-            get => label.text;
-            set => label.text = value;
+            get => labelElement.text;
+            set => labelElement.text = value;
         }
         public bool Active {
             get => isActive;
@@ -75,19 +75,19 @@ namespace MuHua {
             //设置名称
             title.name = "title";
             image.name = "image";
-            label.name = "label";
+            labelElement.name = "label";
             container.name = "container";
             //设置USS类名
             AddToClassList("foldout");
             title.AddToClassList("foldout-title");
             image.AddToClassList("foldout-title-image");
-            label.AddToClassList("foldout-title-label");
+            labelElement.AddToClassList("foldout-title-label");
             container.AddToClassList("foldout-container");
             //设置层级结构
             hierarchy.Add(title);
             hierarchy.Add(container);
             title.Add(image);
-            title.Add(label);
+            title.Add(labelElement);
             //设置事件
             title.RegisterCallback<ClickEvent>((evt) => Active = !Active);
         }
