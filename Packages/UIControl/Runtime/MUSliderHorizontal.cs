@@ -74,7 +74,10 @@ namespace MuHua {
             get => dataType;
             set { dataType = value; UpdateFloatField(); }
         }
-        public float Value => UpdateValue();
+        public float Value {
+            get => UpdateValue();
+            set => UpdateValue(value);
+        }
 
         internal float minValue;
         internal float maxValue;
@@ -94,14 +97,14 @@ namespace MuHua {
             labelElement.style.display = display ? DisplayStyle.Flex : DisplayStyle.None;
         }
         internal void UpdateSlidingValue(float value) {
-            UpdateDragger(value * MaxPosition);
+            UpdateDragger(value);
+            SlidingValueChanged?.Invoke(Value);
         }
         internal void UpdateDragger(float value) {
-            slidingValue = value / MaxPosition;
+            slidingValue = value;
             slidingValue = Mathf.Clamp(slidingValue, 0, 1);
             tracker.style.width = CurrentPosition;
             UpdateFloatField();
-            SlidingValueChanged?.Invoke(Value);
         }
         internal void UpdateFloatField(bool value) {
             isDisplayInput = value;
@@ -115,6 +118,12 @@ namespace MuHua {
             if (dataType == RoundDataType.保留两位小数) { value = (float)Math.Round(value, 2); }
             if (dataType == RoundDataType.整数) { value = Mathf.FloorToInt(value); }
             return Mathf.Clamp(value, MinValue, MaxValue);
+        }
+        internal void UpdateValue(float value) {
+            slidingValue = value / (MaxValue - MinValue);
+            slidingValue = Mathf.Clamp(slidingValue, 0, 1);
+            tracker.style.width = CurrentPosition;
+            UpdateFloatField();
         }
 
         public MUSliderHorizontal() {
@@ -166,10 +175,12 @@ namespace MuHua {
         private void DraggerDrag(PointerMoveEvent evt) {
             if (!isDragger) { return; }
             float offset = evt.position.x - mousePosition;
-            UpdateDragger(originalPosition + offset);
+            float value = (originalPosition + offset) / MaxPosition;
+            UpdateSlidingValue(value);
         }
         private void ContainerDown(PointerDownEvent evt) {
-            UpdateDragger(evt.localPosition.x);
+            float value = evt.localPosition.x / MaxPosition;
+            UpdateSlidingValue(value);
         }
     }
 }
