@@ -30,6 +30,5 @@
 }
 
 .toggle-checkmark-a {
-    background-image: url("project://database/Packages/com.muhua.uicontrol/Assets/Themes/DefaultRuntimeTheme.tss?fileID=-6090568113533005507&guid=4a132c40dbcde0e4b8ee5330aebc6c23&type=3#check");
-    -unity-background-image-tint-color: rgb(65, 65, 65);
+    background-color: rgb(147, 147, 147);
 }
