@@ -72,5 +72,9 @@ namespace MuHuaEditor.UIControl {
         private static void USSSlider() {
             USSCreate(USS + "Slider", "Slider");
         }
+        [MenuItem("Assets/Create/UI Toolkit/Toggle USS")]
+        private static void USSToggle() {
+            USSCreate(USS + "Toggle", "Toggle");
+        }
     }
 }

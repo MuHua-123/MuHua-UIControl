@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/USS/Toggle.uss?fileID=7433441132597879392&amp;guid=4ee2ea68af2f515418323c9d5d939d24&amp;type=3#Toggle" />
+    <ui:Toggle label="Toggle" text="sss" value="true" />
+    <MuHua.MUToggle value="true" picking-mode="Ignore" Value="true" />
+</ui:UXML>
