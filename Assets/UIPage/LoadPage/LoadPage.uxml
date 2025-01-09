@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UIPage/LoadPage/LoadPage.uss?fileID=7433441132597879392&amp;guid=33270eda9a1bd964ebd970076cd42205&amp;type=3#LoadPage" />
+    <Style src="project://database/Assets/UIPage/LoadPage/Slider.uss?fileID=7433441132597879392&amp;guid=d2b0bf340e20f314fb2e935061f1a65e&amp;type=3#Slider" />
+    <ui:VisualElement class="lp-bg">
+        <MuHua.MUSliderHorizontal max-value="1" sliding-value="1" display-input="false" />
+    </ui:VisualElement>
+    <ui:VisualElement style="position: absolute; width: 100%; height: 100%;" />
+</ui:UXML>
