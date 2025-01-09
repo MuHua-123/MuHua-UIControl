@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/USS/PopupWindow.uss?fileID=7433441132597879392&amp;guid=961ca95adb48a7f40bf75205d4a573c6&amp;type=3#PopupWindow" />
+    <MuHua.MUPopupWindow />
+</ui:UXML>

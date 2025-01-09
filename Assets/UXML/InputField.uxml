@@ -1,6 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/USS/InputField.uss?fileID=7433441132597879392&amp;guid=9364d5994210b9d4f9aa80418cb855bd&amp;type=3#InputField" />
-    <MuHua.MUFloatField label="ooo" />
-    <MuHua.MULongField />
-    <MuHua.MUTextField />
-</ui:UXML>

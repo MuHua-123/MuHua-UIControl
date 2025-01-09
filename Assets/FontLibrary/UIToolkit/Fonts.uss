@@ -1,0 +1,3 @@
+.unity-text-element {
+    -unity-font-definition: url("project://database/Assets/FontLibrary/UIToolkit/SourceHanSansCN-Medium%20SDF.asset?fileID=11400000&guid=9dac4d869dd443d47864ec4c7f81f256&type=2#SourceHanSansCN-Medium SDF");
+}

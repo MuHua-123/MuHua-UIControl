@@ -1,8 +1,8 @@
 {
   "dependencies": {
-    "com.muhua.inputsystem": "https://github.com/MuHua-123/MuHua-InputSystem.git?path=Packages/InputSystem#0.3.0",
     "com.unity.collab-proxy": "2.5.1",
     "com.unity.feature.development": "1.0.1",
+    "com.unity.localization": "1.5.3",
     "com.unity.render-pipelines.universal": "14.0.11",
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.timeline": "1.7.6",

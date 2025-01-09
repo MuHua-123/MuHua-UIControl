@@ -1,4 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/USS/ScrollView/ScrollerHorizontal.uss?fileID=7433441132597879392&amp;guid=5eab1e6d2bba51b4bb6f7c6fad8e1e54&amp;type=3#ScrollerHorizontal" />
-    <MuHua.MUScrollerHorizontal />
-</ui:UXML>

@@ -1,2 +1,3 @@
-@import url("unity-theme://default");
+@import url("/Packages/com.muhua.uicontrol/Assets/Themes/DefaultRuntimeTheme.tss");
+
 VisualElement {}
