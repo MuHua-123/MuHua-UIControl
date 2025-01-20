@@ -1,0 +1,24 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Prompt/Message/Message.uss?fileID=7433441132597879392&amp;guid=da034b9f31c3a734d8e1b216d1204e37&amp;type=3#Message" />
+    <ui:VisualElement name="Mask" class="message-panel message-panel-hide" style="background-color: rgba(0, 0, 0, 0.5);" />
+    <ui:VisualElement name="Message1" picking-mode="Ignore" class="message-panel message-panel-hide">
+        <ui:VisualElement name="BG" class="message-panel-bg">
+            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Content" class="message-panel-content" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="Message2" picking-mode="Ignore" class="message-panel message-panel-hide">
+        <ui:VisualElement name="BG" class="message-panel-bg">
+            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Content" class="message-panel-content" style="height: 70%;" />
+            <ui:Button text="确认" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button1" class="message-panel-button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="Message3" picking-mode="Ignore" class="message-panel message-panel-hide">
+        <ui:VisualElement name="BG" class="message-panel-bg">
+            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Content" class="message-panel-content" style="height: 70%;" />
+            <ui:VisualElement style="height: 30%; width: 100%; flex-direction: row; align-items: flex-start; justify-content: space-around;">
+                <ui:Button text="确认" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button2" class="message-panel-button" />
+                <ui:Button text="取消" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button3" class="message-panel-button" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

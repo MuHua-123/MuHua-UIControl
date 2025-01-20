@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="Progress" src="project://database/Assets/UI%20Toolkit/Prompt/Progress/Progress.uxml?fileID=9197481963319205126&amp;guid=7c2f60586a3ee954b9eca773b94e337b&amp;type=3#Progress" />
+    <ui:Template name="Message" src="project://database/Assets/UI%20Toolkit/Prompt/Message/Message.uxml?fileID=9197481963319205126&amp;guid=9972d97d720aea24c9b9845a97523ea2&amp;type=3#Message" />
+    <Style src="project://database/Assets/UI%20Toolkit/Prompt/Prompt.uss?fileID=7433441132597879392&amp;guid=9054170d76bc54847b4093f45dde53fa&amp;type=3#Prompt" />
+    <ui:Instance template="Progress" name="Progress" class="prompt-panel prompt-panel-hide" />
+    <ui:Instance template="Message" name="Message" class="prompt-panel" />
+</ui:UXML>
