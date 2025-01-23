@@ -5,11 +5,11 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 /// <summary>
-/// UI面板
+/// UI页面
 /// </summary>
-public abstract class ModuleUIPanel : MonoBehaviour {
+public abstract class ModulePage : MonoBehaviour {
     /// <summary> 绑定的页面 </summary>
-    public ModuleUIPage UIPage;
+    public ModuleDocument document;
     /// <summary> 核心模块 </summary>
     protected virtual ModuleCore ModuleCore => ModuleCore.I;
     /// <summary> 绑定的根元素 </summary>

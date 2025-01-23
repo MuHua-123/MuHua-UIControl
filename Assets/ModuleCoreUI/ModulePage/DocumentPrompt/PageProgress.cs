@@ -7,8 +7,8 @@ using MuHua;
 /// <summary>
 /// 进度面板
 /// </summary>
-public class UIProgressPanel : ModuleUIPanel {
-    public override VisualElement Element => UIPage.Q<VisualElement>("Progress");
+public class PageProgress : ModulePage {
+    public override VisualElement Element => document.Q<VisualElement>("Progress");
     public MUSliderHorizontal Slider => Element.Q<MUSliderHorizontal>("Slider");
 
     /// <summary> 启用 </summary>

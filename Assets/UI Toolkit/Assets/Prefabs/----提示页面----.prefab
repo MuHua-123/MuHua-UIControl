@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 3235323199585528305}
   - component: {fileID: 8258450884172733276}
   m_Layer: 5
-  m_Name: UIMessagePanel
+  m_Name: PageMessage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 459651476118128458}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47c18e77fa0d81d4a877e3c26b348a32, type: 3}
+  m_Script: {fileID: 11500000, guid: a9af9b5e8fc18534fad7e6e289f655d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   UIPage: {fileID: 753488495254943351}
@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 3081425975016626258}
   - component: {fileID: 4232671993848589113}
   m_Layer: 5
-  m_Name: UILoadingPanel
+  m_Name: PageLoading
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 4931208285171841466}
   - component: {fileID: 1447444378211411812}
   m_Layer: 5
-  m_Name: UIProgressPanel
+  m_Name: PageProgress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

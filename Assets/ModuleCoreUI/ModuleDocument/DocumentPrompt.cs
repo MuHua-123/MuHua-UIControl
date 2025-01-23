@@ -6,10 +6,10 @@ using UnityEngine;
 /// <summary>
 /// 提示页面
 /// </summary>
-public class UIPromptPage : ModuleUIPage, IPrompt {
-    public UILoadingPanel loading;
-    public UIProgressPanel progress;
-    public UIMessagePanel message;
+public class DocumentPrompt : ModuleDocument, IPrompt {
+    public PageLoading loading;
+    public PageProgress progress;
+    public PageMessage message;
 
     public void Awake() => GetComponent<SinglePrompt>().prompt = this;
 

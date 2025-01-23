@@ -4,9 +4,10 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 /// <summary>
-/// UI页面
+/// 文档模块
 /// </summary>
-public abstract class ModuleUIPage : MonoBehaviour {
+public abstract class ModuleDocument : MonoBehaviour {
+    /// <summary> 绑定文档 </summary>
     public UIDocument document;
     /// <summary> 根目录文档 </summary>
     public VisualElement root => document.rootVisualElement;

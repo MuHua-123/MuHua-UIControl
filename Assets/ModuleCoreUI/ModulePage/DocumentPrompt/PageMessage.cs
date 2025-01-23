@@ -7,12 +7,12 @@ using UnityEngine.UIElements;
 /// <summary>
 /// 消息面板
 /// </summary>
-public class UIMessagePanel : ModuleUIPanel {
+public class PageMessage : ModulePage {
     private Action callback1;
     private Action callback2;
     private Action callback3;
 
-    public override VisualElement Element => UIPage.Q<VisualElement>("Message");
+    public override VisualElement Element => document.Q<VisualElement>("Message");
     public VisualElement Mask => Element.Q<VisualElement>("Mask");
     public VisualElement Message1 => Element.Q<VisualElement>("Message1");
     public VisualElement Message2 => Element.Q<VisualElement>("Message2");
