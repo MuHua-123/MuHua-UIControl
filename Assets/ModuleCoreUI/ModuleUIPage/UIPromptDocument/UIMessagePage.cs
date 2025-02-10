@@ -5,9 +5,9 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 /// <summary>
-/// 消息面板
+/// 消息页面
 /// </summary>
-public class PageMessage : ModulePage {
+public class UIMessagePage : ModuleUIPage {
     private Action callback1;
     private Action callback2;
     private Action callback3;

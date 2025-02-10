@@ -6,11 +6,11 @@ using UnityEngine.UIElements;
 /// <summary>
 /// UI控件
 /// </summary>
-public class ModulePanel {
+public class ModuleUIPanel {
     /// <summary> 核心模块 </summary>
     protected virtual ModuleCore ModuleCore => ModuleCore.I;
     /// <summary> 绑定的元素 </summary>
     public readonly VisualElement element;
     /// <summary> UI控件 </summary>
-    public ModulePanel(VisualElement element) => this.element = element;
+    public ModuleUIPanel(VisualElement element) => this.element = element;
 }

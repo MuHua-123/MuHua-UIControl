@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 提示页面
+/// 提示文档页面
 /// </summary>
-public class DocumentPrompt : ModuleDocument, IPrompt {
-    public PageLoading loading;
-    public PageProgress progress;
-    public PageMessage message;
+public class UIPromptDocument : ModuleDocument, IPrompt {
+    public UILoadingPage loading;
+    public UIProgressPage progress;
+    public UIMessagePage message;
 
     public void Awake() => GetComponent<SinglePrompt>().prompt = this;
 

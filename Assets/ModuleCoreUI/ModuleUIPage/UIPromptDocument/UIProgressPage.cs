@@ -5,9 +5,9 @@ using UnityEngine.UIElements;
 using MuHua;
 
 /// <summary>
-/// 进度面板
+/// 进度页面
 /// </summary>
-public class PageProgress : ModulePage {
+public class UIProgressPage : ModuleUIPage {
     public override VisualElement Element => document.Q<VisualElement>("Progress");
     public MUSliderHorizontal Slider => Element.Q<MUSliderHorizontal>("Slider");
 

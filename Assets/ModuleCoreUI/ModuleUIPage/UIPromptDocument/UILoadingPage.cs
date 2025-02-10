@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 /// <summary>
-/// 加载面板
+/// 加载页面
 /// </summary>
-public class PageLoading : ModulePage {
+public class UILoadingPage : ModuleUIPage {
     public Transform donut;
     private bool isEnable;
     private Vector3 eulerAngles;

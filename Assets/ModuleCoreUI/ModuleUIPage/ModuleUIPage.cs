@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 /// <summary>
 /// UI页面
 /// </summary>
-public abstract class ModulePage : MonoBehaviour {
+public abstract class ModuleUIPage : MonoBehaviour {
     /// <summary> 绑定的页面 </summary>
     public ModuleDocument document;
     /// <summary> 核心模块 </summary>
