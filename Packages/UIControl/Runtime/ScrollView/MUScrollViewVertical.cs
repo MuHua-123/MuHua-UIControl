@@ -107,6 +107,7 @@ namespace MuHua {
             container.generateVisualContent += ContainerGenerateVisualContent;
         }
         private void ContainerDown(PointerDownEvent evt) {
+            if (evt.target != container) { return; }
             isDragger = true;
             mousePosition = evt.position.y - SlidingValue * MaxPosition;
         }

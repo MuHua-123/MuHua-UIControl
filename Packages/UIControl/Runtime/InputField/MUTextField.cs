@@ -47,7 +47,7 @@ namespace MuHua {
         }
         public void SetDefaultPrompt() {
             textElement.RemoveFromClassList("input-field-text-d");
-            if (value != "") { return; }
+            if (value != "" || DefaultPrompt == "") { return; }
             text = DefaultPrompt;
             textElement.AddToClassList("input-field-text-d");
         }
